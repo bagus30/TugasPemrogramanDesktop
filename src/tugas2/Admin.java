@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.TreeMap;
 
 
+
 public interface Admin {
 
     static void main(Menu superMenu){
@@ -20,15 +21,15 @@ public interface Admin {
             if (input.equals("1")){
                 Menu newData = new Menu();
 
-                System.out.println("Admin - Mode Tambah Data - Kategori (1: Makanan, 2: Minuman): ");
+                System.out.println("Admin - Tambah Data - Kategori (1: Makanan, 2: Minuman): ");
                 input = scanner.nextLine();
                 newData.setKategori(input.equals("1")?Kategori.Makanan : Kategori.Minuman);
 
-                System.out.println("Admin - Mode Tambah Data - Nama Menu: ");
+                System.out.println("Admin - Tambah Data - Nama Menu: ");
                 input = scanner.nextLine();
                 newData.setNama(input);
 
-                System.out.println("Admin - Mode Tambah Data - Harga: ");
+                System.out.println("Admin - Tambah Data - Harga: ");
                 input = scanner.nextLine();
                 newData.setHarga(new Double(input));
 
@@ -37,7 +38,7 @@ public interface Admin {
             }
 
             else if(input.equals("2")){
-                System.out.print("Admin - Mode Edit Data - ID Key: ");
+                System.out.print("Admin - Edit Data - ID Key: ");
                 Integer key = Integer.parseInt(scanner.nextLine());
                 Menu data = superMenu.getDaftarMenu().get(key);
 
@@ -48,7 +49,7 @@ public interface Admin {
                     input = scanner.nextLine();
                     data.setHarga(new Double(input));
 
-                    System.out.print("Admin - Mode Edit Data - Konfirmasi - Anda yakin akan melakukan perubahan harga? (ya/tidak): ");
+                    System.out.print("Admin - Edit Data - Konfirmasi - Anda yakin akan melakukan perubahan harga? (ya/tidak): ");
                     String konfirmasi = scanner.nextLine();
                     if(konfirmasi.equalsIgnoreCase("ya")){
                         superMenu.getDaftarMenu().put(key, data);
@@ -59,10 +60,10 @@ public interface Admin {
             }
 
             else if (input.equals("3")){
-                System.out.print("Admin - Mode Hapus Data - ID Key: ");
+                System.out.print("Admin - Hapus Data - ID Key: ");
                 Integer key = Integer.parseInt(scanner.nextLine());
 
-                System.out.print("Admin - Mode Hapus Data - Konfirmasi - Anda yakin hapus menu ini? (ya/tidak): ");
+                System.out.print("Admin - Hapus Data - Konfirmasi - Anda yakin hapus menu ini? (ya/tidak): ");
                 String konfirmasi = scanner.nextLine();
 
                 if(konfirmasi.equalsIgnoreCase("ya")){
@@ -83,7 +84,7 @@ public interface Admin {
     static void printHeader(Menu menu){
         menu.printDaftarMenuAdmin();
         System.out.println("Admin - (1: Tambah menu, 2: Ubah menu, 3: Hapus menu, selesai: Kembali");
-        System.out.print("Admin - Pilihan saya: ");
+        System.out.print("input: ");
     }
 
 }

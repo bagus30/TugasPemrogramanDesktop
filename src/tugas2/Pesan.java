@@ -36,6 +36,15 @@ public interface Pesan {
             input = scanner.nextLine();
         }while(!input.trim().equalsIgnoreCase("selesai"));
         hitungPesanan(pesananSaya);
+        System.out.println("Mohon ditunggu untuk pesanannya ya!");
+        System.out.println();
+        System.out.println("Apakah kamu ingin memesan lagi? (ya/tidak)");
+        input = scanner.nextLine();
+        if (input.trim().equalsIgnoreCase("ya")){
+            Pesan.main(menu);
+        }else if (input.trim().equalsIgnoreCase("tidak")){
+
+        }
     }
 
     static void hitungPesanan(ArrayList<Menu> pesananSaya){
@@ -51,8 +60,7 @@ public interface Pesan {
         }
 
         System.out.println("-------------------- Pembayaran --------------------");
-        System.out.println("| Nama              | Jumlah Item | Harga | Total Harga |");
-        System.out.println("----------------------------------------------------");
+        System.out.println("| Nama           | Jumlah Item |      Harga |Total Harga |");
 
         Double totalBayar = new Double(0);
         for (String nama : jumlahItem.keySet()){
@@ -77,12 +85,12 @@ public interface Pesan {
         Double biayaPelayanan = new Double(2000);
         Double finalBayar = totalBayar + biayaPelayanan + (totalBayar * 10 / 100);
         System.out.println("------------------------------------------");
-        System.out.println("Total Bayar = Rp" + (totalBayar + totalDiskon));
-        if (isDiskon) System.out.println(" - Diskon = Rp" + totalDiskon);
-        if (isDiskon) System.out.println("Total bayar setelah diskon = Rp" + totalBayar);
-        System.out.println("+ pajak 10% = Rp" + (totalBayar * 10 / 100));
-        System.out.println("+ Biaya pelayanan = Rp" + biayaPelayanan);
-        System.out.println("Total Bayar + Biaya Pajak + Biaya Pelayanan = Rp" + finalBayar);
+        System.out.println("Total bayar ............................... Rp" + (totalBayar + totalDiskon));
+        if (isDiskon) System.out.println("- Diskon .................................. Rp" + totalDiskon);
+        if (isDiskon) System.out.println("Total bayar setelah diskon ................ Rp" + totalBayar);
+        System.out.println("+ pajak 10% ............................... Rp" + (totalBayar * 10 / 100));
+        System.out.println("+ Biaya pelayanan ......................... Rp" + biayaPelayanan);
+        System.out.println("Total ..................................... Rp" + finalBayar);
         if (isPromo) System.out.println("Selamat anda mendapatkan gratis 1 minuman");
 
     }

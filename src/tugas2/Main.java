@@ -35,7 +35,7 @@ public class Main implements Pesan, Admin{
     public static void printTitle(){
         System.out.println("------------------- Warung Mamank -------------------");
         System.out.println("1. Pesan Menu");
-        System.out.println("2. Login Admin");
+        System.out.println("2. Login Admin (Khusus Admin)");
         System.out.println("ketik selesai untuk keluar aplikasi");
         System.out.println("------------------------------------------------------");
         System.out.print("input: ");

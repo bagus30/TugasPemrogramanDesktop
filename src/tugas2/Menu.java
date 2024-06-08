@@ -12,11 +12,7 @@ public class Menu {
 
     }
 
-    public Menu(Kategori kategori, String nama, Double harga){
-        this.kategori = kategori;
-        this.nama = nama;
-        this.harga = harga;
-    }
+
 
     public Map<Integer, Menu> getDaftarMenu(){
         daftarMenu.put(1, new Menu(Kategori.Makanan, "Dada Ayam", new Double(15000)));
@@ -28,6 +24,8 @@ public class Menu {
         daftarMenu.put(7, new Menu(Kategori.Minuman, "Air Mineral", new Double(5000)));
         return daftarMenu;
     }
+
+
 
     public void printDaftarMenu(){
         System.out.println("------------ Selamat Datang di Warung Mamank ------------");
@@ -51,6 +49,12 @@ public class Menu {
             System.out.printf("|%8d | %-8s\t| %-14s\t| %10.2f\t|\n", key, menu.getKategori(), menu.getNama(), menu.getHarga());
         }
         System.out.println("---------------------------------------------------------");
+    }
+
+    public Menu(Kategori kategori, String nama, Double harga){
+        this.kategori = kategori;
+        this.nama = nama;
+        this.harga = harga;
     }
 
     public Kategori getKategori(){
